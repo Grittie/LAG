@@ -41,6 +41,7 @@
 
 import edu.princeton.cs.algs4.In;
 import edu.princeton.cs.algs4.StdOut;
+import edu.princeton.cs.algs4.Stopwatch;
 
 import java.util.Arrays;
 
@@ -122,6 +123,9 @@ public class ThreeSumFast {
         In in = new In(args[0]);
         int[] a = in.readAllInts();
         int count = count(a);
+
+        Stopwatch timer = new Stopwatch();
+        StdOut.println("elapsed time = " + timer.elapsedTime());
         StdOut.println(count);
     }
 }
