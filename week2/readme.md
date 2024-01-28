@@ -42,3 +42,112 @@ I have created a pythonSort.py program to calculate the time it takes to sort 20
 Parallel Sort Elapsed Time: 23.78267216682434 seconds 
 ##### Java
 Parallel Sort Elapsed Time: 21683.888912200928 milliseconds
+
+---
+
+## Assignment 2.2 the Comparator Class and stable sort
+### Assignment steps:
+- Is sorting objects more difficult than primitive types like double and int?
+- Create a list of N (as large as you can) random objects of some class (Point2D, Date or your own class) and sort it as quick as you can.
+Can you verify that the used sorting method is a STABLE sort? (learn what this means!).
+Describe your findings and use comments in your code and report.
+
+Note: study the Comparator interface class and learn to use this to sort objects.
+
+Example:
+
+```java
+Point2D points[] = new Point2D[1000]; 
+Arrays.sort(points, Comparator.comparingDouble(Point2D::getX));  // als je java.awt.geom.Point2D gebruikt of
+Arrays.sort(points, Comparator.comparingDouble(Point2D::x)); // bij gebruik van de edu.princeton.cs.algs4.Point2D klasse
+```
+<br>
+
+### Setup process
+I created a Comparator file, this file uses lists and the date function to create a heap of Date objects. The code checks if the sorting is stable by iterating through the sorted list of Date objects and comparing each pair of adjacent dates. It then prints out of the sorting is true or false.
+
+### Running the files
+Simply run Comparator.java
+
+```bash
+javac Comparator.java
+java Comparator
+```
+
+### Questions:
+#### Is sorting objects more difficult than primitive types like double and int?
+
+Yes. Sorting objects in Java is more dificult than sorting primitive types like double and int. This is because primitive types have a natural ordering, while objects do not.
+
+
+---
+
+## Assignment 2.3 Recursive Association experiment
+### Assignment steps:
+You should know how OO relations like inheritance and associations are used in Java, and how toString() overloading from the Object class works (year 1 Java).
+Explain what is wrong with this program and generate a UML diagram with IntelliJ to illustrate the problem in your readme.md report.
+Where and why does a Stackoverflow occur? Is this a recursive program?
+
+```java
+class Fiets {
+    private Frame frame = null;
+    private String naam = "een fiets ding";
+
+    public void setFrame(Frame frame) {
+        this.frame = frame;
+    }
+
+    @Override
+    public String toString() {
+        System.out.println("hi from Fiets toString!");
+        return "Fiets{ frame=" + frame + ", naam='" + naam + "'}";
+    }
+}
+
+class Frame {
+    private Fiets fiets = null;
+    private String naam = "een frame ding";
+
+    public void setFiets(Fiets fiets) {
+        this.fiets = fiets;
+    }
+
+    @Override
+    public String toString() {
+        System.out.println("hi from Frame toString!");
+        return "Frame{fiets=" + fiets + ", naam='" + naam + "'}";
+    }
+}
+
+public class BidiRec {
+    public static void main(String[] args) {
+        Fiets fiets = new Fiets();
+        Frame frame = new Frame();
+        fiets.setFrame(frame);
+        frame.setFiets(fiets);
+        System.out.println(fiets);  // why does it fail here??
+    }
+}
+```
+<br>
+
+### Setup process
+I created a Comparator file, this file uses lists and the date function to create a heap of Date objects. The code checks if the sorting is stable by iterating through the sorted list of Date objects and comparing each pair of adjacent dates. It then prints out of the sorting is true or false.
+
+### Running the files
+Simply run Comparator.java
+
+```bash
+javac Comparator.java
+java Comparator
+```
+
+### Questions:
+#### Explain what is wrong with this program and generate a UML diagram with IntelliJ to illustrate the problem in your readme.md report.
+
+![UML Diagram](UMLdiagram.png)
+
+#### Where and why does a Stackoverflow occur? Is this a recursive program?
+
+The BidiRec class calls for "fiets" in the println where class Fiets calles for "frame" in it's println, where Frame class calls for "Fiets" in it's println. This creates a stackoverflow and the code gets stuck in an endless loop.
+
