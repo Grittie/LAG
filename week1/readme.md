@@ -137,3 +137,9 @@ You can use anything you want to draw bit the Draw class is available in the alg
 Choose a smaller grid size than 1000x1000 to create a nice colourful picture.
 
 <br>
+
+### How it works
+This Java code simulates percolation on a 2D grid and identifies connected regions. The code simulates percolation on a 2D grid, marks connected regions using depth-first search, and visually displays the identified regions on the grid. The solutions are identified by finding the color markers that percolate from the top row to the bottom row.
+
+### Visualizationss
+![Visualization](visualization.png)
