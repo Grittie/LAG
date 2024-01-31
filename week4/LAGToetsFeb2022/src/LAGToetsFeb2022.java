@@ -25,41 +25,49 @@ public class LAGToetsFeb2022 {
     void main() {
         final long seed = 16;  // change if you want to compare other outputs (seed 17 is a non-connected graph)
         Graph g = generateGraph(seed);
-        System.out.println("\nLAG practicumtoets. Naam: <studentnaam> <studentnummer> Klas/Groep: <groep>");
+        System.out.println("\nLAG practicumtoets. Naam: Lars Grit STUDENT_NUMMER Klas/Groep: IT201");
         // part 1: check connectivity
         System.out.println("\nPart 1: test connected graph seed = " + seed);
         boolean connected = false;
-        // write code to check if g is a connected graph
-        // using algs4.DepthFirstSearch from vertex 0 and check if that count equals g.V()
 
-        //...
-        //...
-
-
-//        if (connected) StdOut.println("connected");
-//        else {
-//            StdOut.println("Graph NOT connected");
-//            return;
-//        }
-
+        DepthFirstSearch dfs = new DepthFirstSearch(g,0);
+        connected = dfs.count() == g.V();
+        if (connected) StdOut.println("connected");
+        else {
+            StdOut.println("Graph NOT connected");
+            return;
+        }
 
         // part 2: find nodes with highest degree. Print every line if higher node is found, see output.txt file
         System.out.println("\nPart 2: find node with highest number of neighbours.");
         int maxdegree = 0;
         int maxdegreeNode = -1;
-        // ... use a loop to find and print the node with the highest degree found so far.
-        // ...
-        // ...
-        System.out.printf("Answer part 2: node number %d has degree %d\n", maxdegreeNode, maxdegree);
 
+        for (int i = 0; i < g.V(); i++) {
+            int degree = g.degree(i);
+            if (degree > maxdegree) {
+                maxdegree = degree;
+                maxdegreeNode = i;
+                System.out.printf("node %d has degree %d\n", maxdegreeNode, maxdegree);
+            }
+        }
+        System.out.printf("Answer part 2: node number %d has degree %d\n", maxdegreeNode, maxdegree);
 
         // Part 3: find longest of all shortest path between two nodes in graph g
         System.out.println("\nPart 3: find shortest routes from all vertices to others and print longest one.");
         // use the algs4.BreadthFirstPaths class to find distTo and pathTo from all nodes to all other nodes.
         // use loops to find the path with longest length using BreadthFirstPaths distTo method.
-        //...
-        //...
-        //...
+        int maxDist = 0;
+        for (int node = 0 ; node < g.V(); node++){
+            BreadthFirstPaths bf = new BreadthFirstPaths(g,node);
+            for (int n2 = 0; n2 < g.V(); n2++){
+                if (bf.distTo(n2) > maxDist) {
+                    maxDist = bf.distTo(n2);
+                    System.out.printf("Distance from %d to %d is %d\n", node, n2, maxDist);
+                    System.out.println(bf.pathTo(n2));
+                }
+            }
+        }
 
     } // end main
 

@@ -9,7 +9,7 @@ public class Hashing {
         // Record start time
         long startTime = System.currentTimeMillis();
 
-        BinarySearchST<String, Integer> bookWords = new BinarySearchST<>();
+        SeparateChainingHashST<String, Integer> bookWords = new SeparateChainingHashST<>();
         In file = new In("assets/tale2022v2.txt");
 
         while (!file.isEmpty()) {

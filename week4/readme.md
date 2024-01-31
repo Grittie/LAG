@@ -24,18 +24,31 @@ Vraag 6 Prim MST 3379 (forest) of 1858 (eerste deelgraaf vanaf 0). Zie ook de ge
 - Lever de oplossing in als een enkel java broncode bestand op gitlab.
 <br>
 
-### Setup process
+### Explanation
 
+This program reads a graph from a file, performs various graph-related operations such as checking connectivity, finding connected components, and computing the Minimum Spanning Tree. The code is organized into sections, each addressing a specific aspect of graph processing.
 
-### Running the files
-Simply run Graph.java
+**Reading and Displaying the Graph:**
+- The program reads a graph from a file named "graaf100.txt" using the `In` class from Princeton's `algs4` library.
+- It then creates a `Graph` object (presumably representing an undirected graph) using the data from the file.
+- Prints the graph using `toString()`.
+- Outputs the number of vertices (`V()`) and edges (`E()`) in the graph.
+- Displays the adjacency lists for each vertex.
 
-```bash
-javac Graph.java
-java Graph
-```
+**Graph Connectivity Check (Question 3):**
+- The program performs a depth-first search (`DepthFirstSearch`) on the graph starting from vertex 0.
+- Checks if all vertices are reachable from the source vertex. If not, it prints "NOT connected"; otherwise, it prints "connected".
 
-### Questions:
+**Connected Components:**
+- The program identifies connected components in the graph.
+- It initializes a boolean array `visited` to keep track of visited vertices.
+- For each unvisited vertex, it performs a depth-first search and prints the vertices belonging to the same connected component.
+
+**Creating an EdgeWeightedGraph and Finding Minimum Spanning Tree (MST):**
+- It creates an `EdgeWeightedGraph` (`ewg`) by adding edges with weights based on the absolute difference between vertex indices in the original graph.
+- Prints the `EdgeWeightedGraph`.
+- Computes the Minimum Spanning Tree (MST) using Prim's algorithm (`PrimMST`).
+- Outputs the weight of the MST and displays the edges in the MST.
 
 ---
 
@@ -48,14 +61,24 @@ java Graph
 - finds the longest path between two nodes using the shortest route with BreathFirstPaths (part 3)
 - Check example output for various random seeds in the output.txt and output_seed18.txt files and compare results.
 
-### Setup process
-
-### Running the files
-Simply run LAGToetsFeb2022.java
-
-```bash
-javac LAGToetsFeb2022.java
-java LAGToetsFeb2022
-```
-
 ### Questions:
+This program generates a random graph, checks its connectivity, finds the node with the highest degree, and determines the longest path between two nodes using graph algorithms. The student is expected to fill in specific information and compare the output with predefined examples.
+
+**Graph Generation:**
+- The `generateGraph` method creates a random undirected graph with a fixed seed for randomness. It uses the `GraphGenerator.simple` method from the `edu.princeton.cs.algs4` library to generate a graph with a specified number of vertices (`nrVertices`) and edges (`nrEdges`).
+
+**Main Functionality:**
+- The `main` method is the main entry point of the program.
+- It initializes a random graph using the `generateGraph` method with a fixed seed (in this case, seed `16`).
+- It checks and prints whether the generated graph is connected or not (part 1 of the assignment) using a `DepthFirstSearch` algorithm.
+- It identifies and prints the node with the highest degree (number of neighbors) in the graph (part 2 of the assignment).
+- It finds and prints the longest path between two nodes using the Breadth-First Search (BFS) algorithm (`BreadthFirstPaths`) to find the shortest routes between all pairs of nodes and then selects the longest one (part 3 of the assignment).
+
+**Output:**
+- The program prints the results of the connectivity check, the node with the highest degree, and the longest path between two nodes.
+- The output is intended to be compared with example outputs stored in `output.txt` and `output_seed18.txt` files for different random seeds.
+
+**Additional Notes:**
+- The program includes some placeholder information for the student's name, student number, and class/group.
+- The seed value `16` is provided, and the comments suggest changing it to compare different outputs.
+- The program uses the `StdOut` class from the `edu.princeton.cs.algs4` library for standard output.
