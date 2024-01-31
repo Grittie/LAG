@@ -28,13 +28,46 @@ After importing the library, changing the import on both ThreeSum and ThreeSum f
 *ThreeSum output:*
 ```
 elapsed time = 0.196
-70
-
-Process finished with exit code 0
 ```
 *ThreeSumFast output:*
 ```
+elapsed time = 0.024
+```
 
+<br>
+
+#### 2Kints.txt
+*ThreeSum output:*
+```
+elapsed time = 2.392
+```
+*ThreeSumFast output:*
+```
+elapsed time = 0.074
+```
+
+<br>
+
+#### 4Kints.txt
+*ThreeSum output:*
+```
+elapsed time = 16.472
+```
+*ThreeSumFast output:*
+```
+elapsed time = 0.295
+```
+
+<br>
+
+#### 8Kints.txt
+*ThreeSum output:*
+```
+elapsed time = 135.224
+```
+*ThreeSumFast output:*
+```
+elapsed time = 1.595
 ```
 
 <br>
@@ -42,35 +75,11 @@ Process finished with exit code 0
 #### 8Mints.txt
 *ThreeSum output:*
 ```
-
+elapsed time = 139.752
 ```
 *ThreeSumFast output:*
 ```
-
-```
-
-<br>
-
-#### 16Kints.txt
-*ThreeSum output:*
-```
-
-```
-*ThreeSumFast output:*
-```
-
-```
-
-<br>
-
-#### 32Kints.txt
-*ThreeSum output:*
-```
-
-```
-*ThreeSumFast output:*
-```
-
+elapsed time = 1.507
 ```
 
 <br>
