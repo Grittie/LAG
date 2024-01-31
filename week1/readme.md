@@ -60,18 +60,6 @@ elapsed time = 0.295
 
 <br>
 
-#### 8Kints.txt
-*ThreeSum output:*
-```
-elapsed time = 135.224
-```
-*ThreeSumFast output:*
-```
-elapsed time = 1.595
-```
-
-<br>
-
 #### 8Mints.txt
 *ThreeSum output:*
 ```
