@@ -1,0 +1,6 @@
+week1/ThreeSum/algs4-data/largeG.txt filter=lfs diff=lfs merge=lfs -text
+week1/ThreeSum/algs4-data/largeT.txt filter=lfs diff=lfs merge=lfs -text
+week1/ThreeSum/algs4-data/largeEWG.txt filter=lfs diff=lfs merge=lfs -text
+week1/ThreeSum/algs4-data/leipzig1M.txt filter=lfs diff=lfs merge=lfs -text
+week1/ThreeSum/algs4-data/largeDG.txt filter=lfs diff=lfs merge=lfs -text
+week1/ThreeSum/algs4-data/largeEWD.txt filter=lfs diff=lfs merge=lfs -text
