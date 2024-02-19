@@ -35,3 +35,11 @@ build/
 .idea/scope/
 .idea/vcs.xml
 .idea/editor.xml
+
+# algs4.jar
+week1/ThreeSum/algs4-data/largeG.txt
+week1/ThreeSum/algs4-data/largeT.txt
+week1/ThreeSum/algs4-data/largeEWG.txt
+week1/ThreeSum/algs4-data/leipzig1M.txt
+week1/ThreeSum/algs4-data/largeDG.txt
+week1/ThreeSum/algs4-data/largeEWD.txt
