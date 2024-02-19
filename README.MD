@@ -36,6 +36,7 @@ Every week has a weekly work report in the form of a README.
 
 
 ## Run Locally (NOT FINAL)
+Remember to add the [algs4.jar](https://algs4.cs.princeton.edu/code/algs4.jar) in your project structure and use the required [data files](https://algs4.cs.princeton.edu/code/algs4-data.zip)
 
 Clone the project
 
